@@ -1,0 +1,66 @@
+<div class="row-fluid" ng-controller="ClassDivisionController">
+	<div class="box span12">
+		<div class="box-header well" style="cursor: default;">
+			<h2>Create Classes & Divisions</h2>
+		</div>
+		<div class="box-content">
+			<form class="form-horizontal">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label" for="selectError3">Select Section</label>
+						<div class="controls">
+							<select id="selectError3" ng-model="section">
+								<option>Pre-Primary</option>
+								<option>Primary</option>
+								<option>Secondary</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="selectError3">Standard Level</label>
+						<div class="controls">
+							<select id="selectError3" ng-model="standard_level">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="focusedInput">Class Name</label>
+						<div class="controls">
+							<input class="input-xlarge focused" name="Name" ng-model="class_name" id="focusedInput" type="text" style="height:26px" pattern="[A-Za-z]+" title="Please enter valid name" required>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="focusedInput">Select Divisions</label>
+						<div class="controls" style="border:1px solid #000000;height: 95px;width: 215px;overflow-y: scroll;padding-left: 5px;">
+							<label class="checkbox inline">
+								<input type="checkbox" id="inlineCheckbox1" value="option1"> Option 1
+							</label><br>
+							<label class="checkbox inline">
+								<input type="checkbox" id="inlineCheckbox1" value="option1"> Option 1
+							</label><br>
+							<label class="checkbox inline">
+								<input type="checkbox" id="inlineCheckbox1" value="option1"> Option 1
+							</label><br>
+							<label class="checkbox inline">
+								<input type="checkbox" id="inlineCheckbox1" value="option1"> Option 1
+							</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="focusedInput"></label>
+						<div class="controls">
+							<a class="btn btn-success" ng-click="showAddDivisionpopup()"><i class="icon icon-white icon-add"></i> Add Division</a>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Save </button>
+						<button class="btn">Cancel</button>
+					</div>
+				</fieldset>	
+			</form>	
+		</div>
+	</div>
+</div>
