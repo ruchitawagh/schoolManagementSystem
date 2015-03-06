@@ -1,4 +1,4 @@
-schoolUI.controller('ClassDivisionController', function($scope, $route, DivisionService, $modal) {
+adminUI.controller('ClassDivisionController', function($scope, $route, $modal) {
 	console.log("Class Division Controller Loaded");
 	var size = 'lg';
 	$scope.showAddDivisionpopup = function(){

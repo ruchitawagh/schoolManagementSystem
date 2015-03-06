@@ -10,11 +10,13 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.erp.school.model.Login;
 import com.erp.school.service.SessionService;
 
 
@@ -43,15 +45,22 @@ public class SessionController {
 	public @ResponseBody Object login(HttpServletRequest request,  HttpServletResponse response, @RequestBody String jsonString){
 		System.out.println("JSON : \n" + jsonString);
 		ObjectMapper objectMapper = new ObjectMapper();
-		//User user = null;
+		Login user = null;
+		Boolean isValidUser = true;
 		try {
-			//user = objectMapper.readValue(jsonString, User.class);
+			user = objectMapper.readValue(jsonString, Login.class);
+			System.out.println("*******************************************************************");
+			System.out.println(user.getUserName());
+			isValidUser = sessionService.validateUser(user);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return sessionService.doOperation(request);
+		ModelMap modelMap = new ModelMap();
+		modelMap.addAttribute("isValidUser", isValidUser);
+		modelMap.addAttribute("message","hello, u r a valid user");
+		return modelMap;
 	}
 }

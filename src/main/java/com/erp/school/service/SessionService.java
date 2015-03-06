@@ -1,5 +1,6 @@
 package com.erp.school.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -7,12 +8,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 
-import com.erp.school.dao.GenericDao;
+import com.erp.school.model.Login;
 
 
 @Service
@@ -51,6 +51,26 @@ public class SessionService {
 		modelMap.addAttribute("message", "Hello " + user.getUserName() + " !");*/
 		ModelMap modelMap = new ModelMap();
 		return modelMap;
+		
+	}
+	
+	public Boolean validateUser(Login user){
+		TypedQuery<Login> userTypedQuery = em.createQuery("from Login where userName=?1 and password=?2", Login.class);
+		userTypedQuery.setParameter(1, user.getUserName());
+		userTypedQuery.setParameter(2, user.getPassword());
+		List<Login> userList = userTypedQuery.getResultList();
+		
+		if(userList != null && userList.size() > 0){
+			System.out.println("valid user");
+			for (Iterator iterator = userList.iterator(); iterator.hasNext();) {
+				Login login = (Login) iterator.next();
+				System.out.println(login.getUserName() + "  :  " + login.toString());
+			}
+			return true;
+		}else{
+			System.out.println("INVALID user");
+			return false;
+		}
 		
 	}
 

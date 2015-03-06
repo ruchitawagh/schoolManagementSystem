@@ -35,7 +35,7 @@
 	<script src="app/vendor/angular-route.js"></script>
 	<script src="app/vendor/ui-bootstrap-tpls-0.12.0.min.js"></script>
 	
-		<!-- load javascript files -->
+	<!-- load javascript files -->
 	<script src="app/app.js"></script>
 
 

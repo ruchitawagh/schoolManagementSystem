@@ -38,18 +38,11 @@
 		<!-- load javascript files -->
 	<script src="app/app.js"></script>
 
-
-
 	<!-- load controllers -->
-	<!-- <script src="app/admin/controllers/LoginController.js"></script>
-	<script src="app/admin/controllers/RegistrationController.js"></script>
-	<script src="app/admin/controllers/ClassDivisionController.js"></script> -->
 	<script src="app/admin/controllers/MainController.js"></script>
 	
-	<!-- 
+	<!-- load services -->
 	<script src="app/admin/services/LoginService.js"></script>
-	<script src="app/admin/services/DivisionService.js"></script>
-	 -->
 	
 </head>
 <body ng-controller="MainController">	
@@ -58,7 +51,7 @@
 		
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>Welcome to Charisma</h2>
+					<h2>Welcome to Royal Public School</h2>
 				</div><!--/span-->
 			</div><!--/row-->
 			
@@ -70,12 +63,12 @@
 					<form class="form-horizontal">
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="username" id="username" type="text" value="admin" />
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" ng-model="login.userName" id="userName" type="text" placeholder="Username"/>
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password" id="password" type="password" value="admin123456" />
+								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" ng-model="login.password" id="password" type="password" placeholder="Password"/>
 							</div>
 							<div class="clearfix"></div>
 
@@ -85,7 +78,7 @@
 							<div class="clearfix"></div>
 
 							<p class="center span5">
-							<button type="submit" class="btn btn-primary" ng-click="doLogin();">Login</button>
+							<button type="submit" class="btn btn-primary" ng-click="doLogin(login);">Login</button>
 							</p>
 						</fieldset>
 					</form>

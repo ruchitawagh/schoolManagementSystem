@@ -22,6 +22,9 @@ adminUI.controller('RegistrationController', function($scope, $route, $modal) {
 	
 	$scope.registerstudent = function(register){
 		console.log("In Register Student");
-		console.log("Info"+JSON.stringify(register));		
+		console.log("Info"+JSON.stringify(register));	
+		studentRegistrationService.submitStudentdata(function(data){
+			
+		});	
 	};
 });
