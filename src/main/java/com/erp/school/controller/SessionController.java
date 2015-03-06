@@ -51,18 +51,13 @@ public class SessionController {
 		Boolean isValidUser = true;
 		try {
 			user = objectMapper.readValue(jsonString, Login.class);
-			System.out.println("*******************************************************************");
-			System.out.println(user.getUserName());
 			isValidUser = sessionService.validateUser(user);
-			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		ModelMap modelMap = new ModelMap();
 		modelMap.addAttribute("isValidUser", isValidUser);
-		modelMap.addAttribute("message","hello, u r a valid user");
 		return modelMap;
 	}
 }

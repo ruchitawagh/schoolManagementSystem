@@ -8,10 +8,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 
+import com.erp.school.dao.LoginDao;
 import com.erp.school.model.Login;
 
 
@@ -19,11 +21,17 @@ import com.erp.school.model.Login;
 @Transactional
 public class SessionService {
 	
-	@PersistenceContext
-	private EntityManager em;
+	@Autowired
+	LoginDao loginDao;
 	
 	/*@Autowired
 	GenericDao genericDao;*/
+	
+	/**
+	 * Below method "doOperation" has nothing to do. I was initially written for PUC kind of work.
+	 * @param request
+	 * @return
+	 */
 	
 	public ModelMap doOperation(HttpServletRequest request){
 		/*User user = new User();
@@ -54,24 +62,20 @@ public class SessionService {
 		
 	}
 	
+	
+	/**
+	 * Method for validating the user for the credentials entered while log-in process.
+	 * @param user
+	 * @return Boolean
+	 */
 	public Boolean validateUser(Login user){
-		TypedQuery<Login> userTypedQuery = em.createQuery("from Login where userName=?1 and password=?2", Login.class);
-		userTypedQuery.setParameter(1, user.getUserName());
-		userTypedQuery.setParameter(2, user.getPassword());
-		List<Login> userList = userTypedQuery.getResultList();
+		List<Login> userList = loginDao.getLoginByUserNameAndPasword(user);
 		
 		if(userList != null && userList.size() > 0){
-			System.out.println("valid user");
-			for (Iterator iterator = userList.iterator(); iterator.hasNext();) {
-				Login login = (Login) iterator.next();
-				System.out.println(login.getUserName() + "  :  " + login.toString());
-			}
 			return true;
 		}else{
-			System.out.println("INVALID user");
 			return false;
 		}
-		
 	}
 
 }
