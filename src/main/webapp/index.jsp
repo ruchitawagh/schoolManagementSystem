@@ -60,33 +60,31 @@
 					<div class="alert alert-info">
 						Please login with your Username and Password.
 					</div>
-					<form class="form-horizontal">
+					<form class="form-horizontal" name="login" ng-submit="doLogin(login)">
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" ng-model="login.userName" id="userName" type="text" placeholder="Username"/>
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" ng-model="login.userName" id="userName" type="text" placeholder="Username" required/>
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" ng-model="login.password" id="password" type="password" placeholder="Password"/>
-							</div>
-							<div class="clearfix"></div>
-
-							<div class="input-prepend">
-							<label class="remember" for="remember"><input type="checkbox" id="remember" />Remember me</label>
+								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" ng-model="login.password" id="password" type="password" placeholder="Password" required/>
 							</div>
 							<div class="clearfix"></div>
 
 							<p class="center span5">
-							<button type="submit" class="btn btn-primary" ng-click="doLogin(login);">Login</button>
+							<button type="submit" class="btn btn-primary">Login</button>
 							</p>
 						</fieldset>
 					</form>
+					<div class="box-content alerts" ng-show="errorMsg!=null">
+						<div class="alert alert-error">
+							<strong>Error :</strong> {{errorMsg}}
+						</div>
+					</div>	
 				</div><!--/span-->
 			</div><!--/row-->
-				</div><!--/fluid-row-->
-		
+		</div><!--/fluid-row-->
 	</div><!--/.fluid-container-->
-
 </body>
 </html>
