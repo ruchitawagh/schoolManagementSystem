@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.erp.school.model.Login;
 import com.erp.school.service.SessionService;
+import com.erp.school.util.Response;
+import com.erp.school.util.ResponseHead;
+import com.erp.school.util.ResponsePayLoad;
+import com.erp.school.util.ResponsePayLoadStatus;
 
 
 
@@ -49,15 +53,44 @@ public class SessionController {
 		ObjectMapper objectMapper = new ObjectMapper();
 		Login user = null;
 		Boolean isValidUser = true;
+		
+		/**
+		 * Creating Response structure to be returned.
+		 */
+		Response returnObject = new Response();
+		
+		ResponseHead responseHead = new ResponseHead();
+		returnObject.setHead(responseHead);
+		
+		ResponsePayLoad responsePayLoad = new ResponsePayLoad();
+		ResponsePayLoadStatus responsePayLoadStatus = new ResponsePayLoadStatus();
+		responsePayLoad.setStatus(responsePayLoadStatus);
+		returnObject.setPayLoad(responsePayLoad);
+		
 		try {
 			user = objectMapper.readValue(jsonString, Login.class);
 			isValidUser = sessionService.validateUser(user);
+			if(isValidUser){
+				returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
+				returnObject.getHead().setSessionId("Session management is yet pending having low priority as per discussion");
+				returnObject.getPayLoad().getStatus().setCode(200);
+				returnObject.getPayLoad().getStatus().setMsg("Valid user");
+			}else{
+				returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
+				returnObject.getHead().setSessionId("Session management is yet pending having low priority as per discussion");
+				returnObject.getPayLoad().getStatus().setCode(400);
+				returnObject.getPayLoad().getStatus().setMsg("Invalid User");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
+			returnObject.getHead().setSessionId("Session management is yet pending having low priority as per discussion");
+			returnObject.getPayLoad().getStatus().setCode(400);
+			returnObject.getPayLoad().getStatus().setMsg("Oops Something went wrong : Filed in validationg user credentials");
 		}
 		
 		ModelMap modelMap = new ModelMap();
-		modelMap.addAttribute("isValidUser", isValidUser);
+		modelMap.addAttribute("response", returnObject);
 		return modelMap;
 	}
 }
