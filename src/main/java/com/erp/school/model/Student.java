@@ -38,7 +38,7 @@ public class Student {
     private Integer academicYear;
     
     @Column(name="phone_number", nullable=true)
-    private Integer phoneNumber;
+    private String phoneNumber;
     
     @Column(name="age", nullable=true)
     private Integer age;
@@ -74,7 +74,7 @@ public class Student {
     @Column(name="nationality",nullable=true)
     private String nationality;
     
-    @Column(name="role",nullable=true)
+    @Column(name="role",nullable=false)
     private String role;
 
 	public String getRole() {
@@ -141,11 +141,11 @@ public class Student {
 		this.academicYear = academicYear;
 	}
 
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
