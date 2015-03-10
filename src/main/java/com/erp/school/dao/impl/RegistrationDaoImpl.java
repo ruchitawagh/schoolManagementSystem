@@ -1,12 +1,12 @@
 package com.erp.school.dao.impl;
 
 import com.erp.school.dao.RegistrationDao;
-import com.erp.school.model.TeacherDetails;
+import com.erp.school.model.Teacher;
 
-public class RegistrationDaoImpl extends GenericDaoImpl<TeacherDetails,Integer> implements RegistrationDao{
+public class RegistrationDaoImpl extends GenericDaoImpl<Teacher,Integer> implements RegistrationDao{
 	
-	protected Class<TeacherDetails> getEntityClass() {
+	protected Class<Teacher> getEntityClass() {
 		
-		return TeacherDetails.class;
+		return Teacher.class;
 	}
 }

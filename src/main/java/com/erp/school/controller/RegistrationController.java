@@ -35,7 +35,7 @@ public class RegistrationController {
 
 	@RequestMapping(value="/registrationTeacher.do", method = RequestMethod.POST)
 	public @ResponseBody Object registerTeacher(HttpServletRequest request,  HttpServletResponse response, @RequestBody String jsonString){
- 		return registrationService.register(request,jsonString);
+ 		return registrationService.registerTeacher(request,jsonString);
 		
   }
 	

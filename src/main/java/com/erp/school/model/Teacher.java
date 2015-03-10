@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 
 @Entity
 @Table(name="teacher_details")
-public class TeacherDetails {
+public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -89,7 +89,7 @@ public class TeacherDetails {
     @Column(name="bank_acc_name",nullable=true)
     private String bankAccountName;
     
-    @Column(name="role",nullable=true)
+    @Column(name="role",nullable=false)
     private String role;
 
 	public Integer getId() {

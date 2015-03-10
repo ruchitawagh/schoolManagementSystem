@@ -1,9 +1,9 @@
 package com.erp.school.dao;
 
 import com.erp.school.dao.GenericDao;
-import com.erp.school.model.TeacherDetails;
+import com.erp.school.model.Teacher;
 
-public interface RegistrationDao extends GenericDao<TeacherDetails, Integer>{
+public interface RegistrationDao extends GenericDao<Teacher, Integer>{
 
 
 }
