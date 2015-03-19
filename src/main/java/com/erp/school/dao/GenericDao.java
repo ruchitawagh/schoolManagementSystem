@@ -11,3 +11,4 @@ public interface GenericDao <T, ID extends Serializable> {
      */
 	public void persist(T entity);
 }
+
