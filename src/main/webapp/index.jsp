@@ -39,13 +39,13 @@
 	<script src="app/app.js"></script>
 
 	<!-- load controllers -->
-	<script src="app/admin/controllers/MainController.js"></script>
+	<script src="app/admin/controllers/LoginController.js"></script>
 	
 	<!-- load services -->
 	<script src="app/admin/services/LoginService.js"></script>
 	
 </head>
-<body ng-controller="MainController">	
+<body ng-controller="LoginController">	
 	<div class="container-fluid">
 		<div class="row-fluid">
 		
@@ -79,7 +79,7 @@
 					</form>
 					<div class="box-content alerts" ng-show="errorMsg!=null">
 						<div class="alert alert-error">
-							<strong>Error :</strong> {{errorMsg}}
+							<strong>{{errorMsg}}</strong> 
 						</div>
 					</div>	
 				</div><!--/span-->

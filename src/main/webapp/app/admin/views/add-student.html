@@ -1,7 +1,7 @@
-<div ng-controller="RegistrationController" ng-init="showalerts=0;" ng-model="template">
-	<div class="modal-header">
+<div ng-controller="RegistrationController" ng-init="showalerts=0;register.Nationality='Indian';register.Country='India';register.State='Maharashtra';" ng-model="template">
+	<div class="modal-header" style="background-color: #43a1da;">
 		<button type="button" class="close" ng-click="cancel()">×</button>
-		<h3>Add Student</h3>
+		<h3 style="color: #ffffff;">Add Student</h3>
 	</div>
 	<form class="form-horizontal" name="registerStudent" ng-submit="registerstudent(register)">
 		<div class="modal-body" style="overflow-y:scroll">
@@ -32,8 +32,7 @@
 				<div class="control-group">
 					<label class="control-label" for="focusedInput">Reg Date</label>
 					<div class="controls">
-						<input class="input-xlarge focused" id="appendedInputButton" type="text" style="height:26px" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
-						<button class="btn" type="button" ng-click="open($event)"><i class="icon icon-calendar"></i></button>
+						<input class="input-xlarge focused" id="appendedInputButton" type="date" style="height:26px" ng-model="dt" ng-required="true">
 					</div>
 				</div>
 				<div class="control-group">
@@ -85,8 +84,8 @@
 				<div class="control-group">
 					<label class="control-label" for="focusedInput">Date of Birth</label>
 					<div class="controls">
-						<input class="input-xlarge focused" id="appendedInputButton" type="text" style="height:26px" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
-						<button class="btn" type="button" ng-click="open($event)"><i class="icon icon-calendar"></i></button>
+						<input class="input-xlarge focused" id="appendedInputButton" type="date" style="height:26px" ng-model="dt" ng-required="true">
+						
 					</div>
 				</div>
 				<div class="control-group">
@@ -128,7 +127,7 @@
 				<div class="control-group">
 					<label class="control-label">Nationality</label>
 					<div class="controls">
-						<input type="text" name="Nationality" style="height:26px" value="Indian" pattern="[A-Za-z\s]+" ng-model="register.Nationality" required>
+						<input type="text" name="Nationality" style="height:26px" pattern="[A-Za-z\s]+" ng-model="register.Nationality" required>
 					</div>
 				</div>
 				<div class="control-group">
@@ -167,13 +166,13 @@
 				<div class="control-group">
 					<label class="control-label">State</label>
 					<div class="controls">
-						<input type="text" name="State" style="height:26px" value="Maharashtra" pattern="[A-Za-z]+" ng-model="register.State" required>
+						<input type="text" name="State" style="height:26px" pattern="[A-Za-z]+" ng-model="register.State" required>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Country</label>
 					<div class="controls">
-						<input type="text" name="Country" style="height:26px" value="India" pattern="[A-Za-z]+" ng-model="register.Country" required>
+						<input type="text" name="Country" style="height:26px" pattern="[A-Za-z]+" ng-model="register.Country" required>
 					</div>
 				</div>
 				<div class="control-group">
@@ -196,7 +195,7 @@
 				</div>
 			</fieldset>
 		</div>
-		<div class="modal-footer">
+		<div class="modal-footer" style="background-color: #ffffff;">
 			<!--<button class="btn" ng-click="cancel()">Close</button>-->
 			<button type="submit" class="btn btn-primary">Save</button>
 		</div>

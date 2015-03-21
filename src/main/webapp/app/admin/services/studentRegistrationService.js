@@ -1,8 +1,11 @@
-schoolUI.service('studentRegistrationService', function(HttpCommunicationUtil) {
+adminUI.service('studentRegistrationService', function($http) {
 	console.log("Student Registration Service");
-	this.studentRegistrationService = function(data){
-		$http.post('app/json/userLogin.json', data).success(function(response){
-			console.log("data" +JSON.stringify(response));
+	/*
+	*POST call to register student information 
+	*/
+	this.submitStudentdata = function(url, data, successFun, errorFun){
+		$http.post(url, data).success(function(response){
+			successFun(response);
 		});
 	};
 });

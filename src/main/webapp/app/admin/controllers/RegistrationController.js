@@ -1,5 +1,6 @@
-adminUI.controller('RegistrationController', function($scope, $route, $modal) {
+adminUI.controller('RegistrationController', function($scope, $rootScope, studentRegistrationService, $route, $modal) {
 	console.log("Registration Controller Loaded");
+	$rootScope.baseUrl = '/MyLearningProjectOne/';
 	var size = 'lg';
 	$scope.showAddRegpopup = function(){
 		console.log("Inside pop up screen"+size);
@@ -14,6 +15,11 @@ adminUI.controller('RegistrationController', function($scope, $route, $modal) {
 		$modalInstance.close('cancel');
 	};
 	
+	$rootScope.alerts = [
+	                 { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+	                 { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+	               ];
+	
 	$scope.valid = function(){
 	$scope.showalerts = 1;
 	$scope.message = "ahsvchsavchsavch dvbd hdb bdjbjbj cjbkabj";
@@ -22,9 +28,12 @@ adminUI.controller('RegistrationController', function($scope, $route, $modal) {
 	
 	$scope.registerstudent = function(register){
 		console.log("In Register Student");
+		$scope.studentInfo = register;
 		console.log("Info"+JSON.stringify(register));	
-		studentRegistrationService.submitStudentdata(function(data){
-			
+		$scope.Url = $rootScope.baseUrl + 'registrationStudent.do';
+		console.log("URL=="+$scope.Url);
+		studentRegistrationService.submitStudentdata($scope.Url, $scope.studentInfo, function(response){
+			console.log("Response="+JSON.stringify(response));
 		});	
 	};
 });

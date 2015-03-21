@@ -1,13 +1,12 @@
-schoolUI.service('DivisionService', function($http) {
-	console.log("Division Service loaded");
+adminUI.service('DivisionService', function($http) {
+console.log("Division Service loaded");
 	
-	this.fetchData = function(){
-	alert('hello');
-		$http.get('app/json/userLogin.json').success(function(response){
-			console.log("data" +JSON.stringify(response));
+	/*
+	*POST call to save division name
+	*/
+	this.saveDivisions = function(url, data, successFun, errorFun){
+		$http.post(url, data).success(function(response){
+			successFun(response);
 		});
 	};
-	/*$http.get('../../json/userLogin.json').success(function(response){
-		consle.log("data" +response);
-	});*/
 });

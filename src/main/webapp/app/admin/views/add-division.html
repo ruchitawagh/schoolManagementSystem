@@ -1,9 +1,9 @@
 <div ng-controller="ClassDivisionController" ng-init="showalerts=0;" ng-model="template">
-	<div class="modal-header">
+	<div class="modal-header" style="background-color: #43a1da;">
 		<button type="button" class="close" ng-click="cancel()">×</button>
-		<h3>Add Division</h3>
+		<h3 style="color: #ffffff;">Add Division</h3>
 	</div>
-	<form class="form-horizontal">
+	<form class="form-horizontal" name="createDivisions" ng-submit="saveDivisions(register)">
 		<div class="modal-body">
 			<div class="box-content alerts" ng-show="errorMessage!=null">
 				<div class="alert alert-info">
@@ -15,14 +15,14 @@
 				<div class="control-group">
 					<label class="control-label">Divison Name</label>
 					<div class="controls">
-						<input type="text" name="City" style="height:26px" pattern="[A-Za-z\s]+" ng-model="DivisionName" required>
+						<input type="text" style="height:26px" pattern="[A-Za-z\s]+" ng-model="register.DivisionName" required>
 					</div>
 				</div>			
 			</fieldset>
 		</div>
-		<div class="modal-footer">
+		<div class="modal-footer" style="background-color: #ffffff;">
 			<!--<button class="btn" ng-click="cancel()">Close</button>-->
-			<button type="submit" class="btn btn-primary" ng-click="saveDivision(DivisionName)">Save</button>
+			<button type="submit" class="btn btn-primary">Save</button>
 		</div>
 	</form>
 </div>

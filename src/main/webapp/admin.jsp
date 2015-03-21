@@ -42,16 +42,20 @@
 
 	<!-- load controllers -->
 	<script src="app/admin/controllers/LoginController.js"></script>
+	<script src="app/admin/controllers/AdminDashboardController.js"></script>
 	<script src="app/admin/controllers/RegistrationController.js"></script>
 	<script src="app/admin/controllers/ClassDivisionController.js"></script>
 	
 	<!-- load services -->
-	<script src="app/admin/services/LoginService.js"></script>
 	<script src="app/admin/services/DivisionService.js"></script>
+	<script src="app/admin/services/studentRegistrationService.js"></script>
 	
 	
 </head>
-<body>	
+<body>
+	<div>
+  		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+	</div>	
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -68,7 +72,7 @@
 						<span class="caret"></span>
 					</a>-->
 					<button type="button" class="btn dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-						Button dropdown <span class="caret"></span>
+						Admin <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Profile</a></li>
@@ -90,7 +94,7 @@
 						<li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
 						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Student</span></a></li>
 						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Staff</span></a></li>
-						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Fee</span></a></li>
+						<!-- <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Fee</span></a></li>-->
 						<li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Notification</span></a></li>
 					</ul>
 				</div>
