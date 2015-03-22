@@ -92,4 +92,5 @@
 	<bean id="divisionDao" class="com.erp.school.dao.impl.DivisionDaoImpl"></bean>
 	<bean id="loginDao" class="com.erp.school.dao.impl.LoginDaoImpl"></bean>
     <bean id="studentDao" class="com.erp.school.dao.impl.StudentDaoImpl"></bean>
+     <bean id="sectionDao" class="com.erp.school.dao.impl.SectionDaoImpl"></bean>
 </beans>

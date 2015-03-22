@@ -81,7 +81,7 @@ public class RegistrationService {
 			studentDao.persist(student);
 			UserName=student.getFirstName()+"."+student.getLastName()+""+student.getId();
 			Password="123456";
-			role=student.getRole();
+			role="student";
 			regNo=student.getId();
 			setLoginAttribute(UserName,Password,regNo,role);
 			modelMap.addAttribute("Status", "Success");

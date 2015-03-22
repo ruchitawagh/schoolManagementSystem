@@ -16,7 +16,7 @@ public class Student {
   
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "student_id", nullable = false)
     private Integer id;
     
     @Column(name="first_name", nullable=false)
@@ -28,36 +28,48 @@ public class Student {
     @Column(name="last_name", nullable=true)
     private String lastName;
     
-    @Column(name="mother_name", nullable=true)
+    @Column(name="mothers_name", nullable=true)
     private String motherName;
+    
+    @Column(name="parent_email_id",nullable=true)
+    private String parentEmailId;
     
     @Column(name="section_id", nullable=true)
     private Integer sectionId;
     
+    @Column(name="class_id", nullable=true)
+    private Integer classId;
+    
+    @Column(name="division_id", nullable=true)
+    private Integer divisionId;
+    
     @Column(name="academic_year", nullable=true)
     private Integer academicYear;
     
-    @Column(name="phone_number", nullable=true)
-    private String phoneNumber;
-    
-    @Column(name="age", nullable=true)
-    private Integer age;
-    
-    @Column(name="date_of_birth",nullable=true)
+    @Column(name="parent_mobile_no", nullable=true)
+    private String parentMobileNo;
+  
+    @Column(name="dob",nullable=true)
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date dateOfBirth;
     
-    @Column(name="parents_email_address",nullable=true)
-    private String parentEmailId;
-    
+    @Column(name= "category" ,nullable=false)
+    private String Category;
+   
     @Column(name="religion",nullable=true)
     private String religion;
     
     @Column(name="caste",nullable=true)
     private String caste;
     
-    @Column(name="address",nullable=true)
-    private String Address;
+    @Column(name="permanent_address",nullable=true)
+    private String permanentAddress;
+    
+    @Column(name="correspondence_address",nullable=true)
+    private String correspondenceAddress;
+    
+    @Column(name="country",nullable=false)
+    private String Country; 
     
     @Column(name="city",nullable=true)
     private String City;
@@ -65,24 +77,34 @@ public class Student {
     @Column(name="state",nullable=true)
     private String State;
     
+    @Column(name="pincode",nullable=true)
+    private String pincode;
+    
     @Column(name="gender",nullable=true)
     private String gender;
     
-    @Column(name="type_of_job",nullable=true)
-    private String typeOfJob;
+    @Column(name="blood_group",nullable=false)
+    private String bloodGroup;
+    
+    @Column(name="birth_place",nullable=false)
+    private String birthPlace;
     
     @Column(name="nationality",nullable=true)
     private String nationality;
     
-    @Column(name="role",nullable=false)
-    private String role;
+    @Column(name="status",nullable=false)
+    private String status;
+    
+	@Column(name = "photo", nullable = true)
+    private String photo;
 
-	public String getRole() {
-		return role;
+    
+	public String getPhoto() {
+		return photo;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public Integer getId() {
@@ -141,22 +163,6 @@ public class Student {
 		this.academicYear = academicYear;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
@@ -189,13 +195,7 @@ public class Student {
 		this.caste = caste;
 	}
 
-	public String getAddress() {
-		return Address;
-	}
-
-	public void setAddress(String address) {
-		Address = address;
-	}
+	
 
 	public String getCity() {
 		return City;
@@ -221,12 +221,93 @@ public class Student {
 		this.gender = gender;
 	}
 
-	public String getTypeOfJob() {
-		return typeOfJob;
+	
+	public Integer getClassId() {
+		return classId;
 	}
 
-	public void setTypeOfJob(String typeOfJob) {
-		this.typeOfJob = typeOfJob;
+	public void setClassId(Integer classId) {
+		this.classId = classId;
+	}
+
+	public Integer getDivisionId() {
+		return divisionId;
+	}
+
+	public void setDivisionId(Integer divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public String getParentMobileNo() {
+		return parentMobileNo;
+	}
+
+	public void setParentMobileNo(String parentMobileNo) {
+		this.parentMobileNo = parentMobileNo;
+	}
+
+	public String getCategory() {
+		return Category;
+	}
+
+	public void setCategory(String category) {
+		Category = category;
+	}
+
+	public String getPermanentAddress() {
+		return permanentAddress;
+	}
+
+	public void setPermanentAddress(String permanentAddress) {
+		this.permanentAddress = permanentAddress;
+	}
+
+	public String getCorrespondenceAddress() {
+		return correspondenceAddress;
+	}
+
+	public void setCorrespondenceAddress(String correspondenceAddress) {
+		this.correspondenceAddress = correspondenceAddress;
+	}
+
+	public String getCountry() {
+		return Country;
+	}
+
+	public void setCountry(String country) {
+		Country = country;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public String getBloodGroup() {
+		return bloodGroup;
+	}
+
+	public void setBloodGroup(String bloodGroup) {
+		this.bloodGroup = bloodGroup;
+	}
+
+	public String getBirthPlace() {
+		return birthPlace;
+	}
+
+	public void setBirthPlace(String birthPlace) {
+		this.birthPlace = birthPlace;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getNationality() {
