@@ -32,8 +32,8 @@ adminUI.controller('ClassDivisionController', function($rootScope, $scope, $rout
 		console.log("Saving division name");
 		$rootScope.SEND_REQUEST.request.payload = register;
 		console.log("Division Name==="+JSON.stringify($rootScope.SEND_REQUEST));
-		$scope.Url = $rootScope.baseUrl + '';
-		console.log("URL=="+$rootScope.baseUrl+" "+$scope.Url);
+		$scope.Url = $rootScope.baseUrl + 'addDivision.do';
+		console.log("URL=="+$scope.Url);
 		DivisionService.saveDivisions($scope.Url, $rootScope.SEND_REQUEST, function(response){
 			console.log("Response="+JSON.stringify(response));
 		});			
