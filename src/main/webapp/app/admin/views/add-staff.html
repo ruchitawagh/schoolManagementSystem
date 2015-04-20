@@ -1,0 +1,190 @@
+<div ng-controller="StaffRegistrationController" ng-init="showalerts=0;register.Nationality='Indian';register.Country='India';register.State='Maharashtra';" ng-model="template">
+	<div class="modal-header" style="background-color: #43a1da;">
+		<button type="button" class="close" ng-click="cancel()">×</button>
+		<h3 style="color: #ffffff;">Add Staff</h3>
+	</div>
+	<form class="form-horizontal" name="registerStudent" ng-submit="registerstudent(register)">
+		<div class="modal-body" style="overflow-y:scroll">
+			<div class="box-content alerts" ng-show="errorMessage!=null">
+				<div class="alert alert-info">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<strong> Heads up!</strong> {{$errorMessage}}
+				</div>
+			</div>
+		
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label" for="selectError3">Academic Year</label>
+					<div class="controls">
+						<select id="selectError3" ng-model="staff.academic_year">
+							<option>2011</option>
+							<option>2012</option>
+							<option>2013</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">Reg No</label>
+					<div class="controls">
+						<span class="input-xlarge uneditable-input">101</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">Reg Date</label>
+					<div class="controls">
+						<input class="input-xlarge focused" id="appendedInputButton" type="date" style="height:26px" ng-model="staff.regDate" ng-required="true">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="selectError3">Staff Role</label>
+					<div class="controls">
+						<select id="selectError3" ng-model="staff.role">
+							<option>Principal</option>
+							<option>Music Teacher</option>
+							<option>Sport Teacher</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="selectError3">Is Teacher</label>
+					<div class="controls">
+						<select id="selectError3" ng-model="staff.isTeacher">
+							<option>Yes</option>
+							<option>No</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">First Name</label>
+					<div class="controls">
+						<input class="input-xlarge focused" name="Name" ng-model="staff.firstName" id="focusedInput" type="text" style="height:26px" pattern="[A-Za-z]+" title="Please enter valid name" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">Middle Name</label>
+					<div class="controls">
+						<input class="input-xlarge focused" name="Name" ng-model="staff.middleName" id="focusedInput" type="text" style="height:26px" pattern="[A-Za-z]+" title="Please enter valid name" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">Last Name</label>
+					<div class="controls">
+						<input class="input-xlarge focused" name="Name" ng-model="staff.lastName" id="focusedInput" type="text" style="height:26px" pattern="[A-Za-z]+" title="Please enter valid name" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">Date of Joining</label>
+					<div class="controls">
+						<input class="input-xlarge focused" id="appendedInputButton" type="date" style="height:26px" ng-model="staff.dateofJoining" ng-required="true">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="focusedInput">Date of Birth</label>
+					<div class="controls">
+						<input class="input-xlarge focused" id="appendedInputButton" type="date" style="height:26px" ng-model="staff.dob" ng-required="true">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="selectError3">Select Gender</label>
+					<div class="controls">
+						<select id="selectError3" ng-model="staff.Gender">
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="selectError3">Marital Status</label>
+					<div class="controls">
+						<select id="selectError3" ng-model="staff.maritalStatus">
+							<option>Married</option>
+							<option>Un-Married</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Religion</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z]+" ng-model="staff.Religion" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Caste</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z]+" ng-model="staff.Caste" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Upload Photo</label>
+					<div class="controls">
+						<input type="file">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Qualification</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z]+" ng-model="staff.Qualification" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Previous School Name</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z]+" ng-model="staff.PreSchoolName" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Email</label>
+					<div class="controls">
+						<input type="email" placeholder="prasad@gmail.com" style="height:26px" ng-model="staff.Email" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Mobile</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[0-9]{10}" ng-model="staff.Mobile" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Country</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z]+" ng-model="staff.Country" required>
+					</div>
+				</div>	
+				<div class="control-group">
+					<label class="control-label">State</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z]+" ng-model="staff.State" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">City</label>
+					<div class="controls">
+						<input type="text" style="height:26px" pattern="[A-Za-z\s]+" ng-model="staff.City" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Permanent Address</label>
+					<div class="controls">
+						<textarea name="Address" ng-model="staff.PermanentAddress" required></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Correspondance Address</label>
+					<div class="controls">
+						<textarea name="Address" ng-model="staff.CorrespondanceAddress" required></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Pincode</label>
+					<div class="controls">
+						<input type="text" name="Pincode" style="height:26px" pattern="[0-9]{6}" ng-model="staff.Pincode" required>
+					</div>
+				</div>			
+			</fieldset>
+		</div>
+		<div class="modal-footer" style="background-color: #ffffff;">
+			<!--<button class="btn" ng-click="cancel()">Close</button>-->
+			<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+	</form>
+</div>

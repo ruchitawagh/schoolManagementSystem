@@ -1,0 +1,119 @@
+<div class="row-fluid sortable" ng-controller="StaffRegistrationController">		
+	<div class="box span12">
+		<div class="box-header well" data-original-title style="cursor:default;">
+			<h2><i class="icon-user"></i> Staff Registration</h2>
+		</div>
+		<div class="box-content">
+			<table style="width:100%;">
+				<tr>
+					<!-- <td style="width:22%"><input placeholder="Search" class="search-query span2" name="query" type="text" style="width:90%"></td>
+					<td style="width:8%">
+						<div class="control-group" style="float:left;padding-top:8px;">
+							<div class="controls">
+								<select id="selectError3" style="width:100%">
+									<option>1st</option>
+									<option>2nd</option>
+									<option>3rd</option>
+									<option>4th</option>
+									<option>5th</option>
+								</select>
+							</div>
+						</div>
+					</td>	
+					<td>
+						<div class="control-group" style="float:left;padding-top:8px;">
+							<div class="controls">
+								<select id="selectError3" style="width:100%">
+									<option>A</option>
+									<option>B</option>
+									<option>C</option>
+									<option>D</option>
+									<option>E</option>
+								</select>
+							</div>
+						</div>
+					</td>	
+					<td><button class="btn" style="float:right"></i> Filter</button></td>-->
+					<td><button class="btn btn-success" style="float:right" ng-click="showAddRegpopup()"><i class="icon icon-white icon-add"></i> Add</button></td>
+				</tr>	
+			</table>
+			<hr>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Reg No.</th>
+						<th>Name</th>
+						<th>Class</th>
+						<th>Division</th>
+						<th>Contact No</th>
+						<th>Address</th>
+						<th>DOB</th>						
+						<th></th>
+					</tr>
+				</thead>   
+				<tbody>
+					<tr>
+						<td>101</td>
+						<td>David R</td>
+						<td class="center">1st</td>
+						<td class="center">A</td>
+						<td class="center">8793448868</td>
+						<td class="center">A/P : Umbraj</td>
+						<td class="center">2012/01/01</td>
+						<td class="center">
+							<span class="dropdown" dropdown on-toggle="toggled(open)">
+								<a href class="dropdown-toggle" dropdown-toggle><i class="icon icon-black icon-triangle-s"></i></a> 
+								<ul class="dropdown-menu" style="margin-left:-69px;min-width: 85px;">
+									<li>
+										<a href>Edit</a>
+										<a href>Delete</a>
+									</li>
+								</ul>
+							</span>	
+						</td>
+					</tr>
+					<tr>
+						<td>102</td>
+						<td>Prasad Khegade</td>
+						<td class="center">1st</td>
+						<td class="center">B</td>
+						<td class="center">8793448868</td>
+						<td class="center">A/P : Umbraj</td>
+						<td class="center">2012/01/01</td>
+						<td class="center">
+							<span class="dropdown" dropdown on-toggle="toggled(open)">
+								<a href class="dropdown-toggle" dropdown-toggle><i class="icon icon-black icon-triangle-s"></i></a> 
+								<ul class="dropdown-menu" style="margin-left:-69px;min-width: 85px;">
+									<li>
+										<a href>Edit</a>
+										<a href>Delete</a>
+									</li>
+								</ul>
+							</span>	
+						</td>
+					</tr>
+					<tr>
+						<td>102</td>
+						<td>Ram Patil</td>
+						<td class="center">1st</td>
+						<td class="center">B</td>
+						<td class="center">8793448868</td>
+						<td class="center">A/P : Umbraj</td>
+						<td class="center">2012/01/01</td>
+						<td class="center">
+							<span class="dropdown" dropdown on-toggle="toggled(open)">
+								<a href class="dropdown-toggle" dropdown-toggle><i class="icon icon-black icon-triangle-s"></i></a> 
+								<ul class="dropdown-menu" style="margin-left:-69px;min-width: 85px;">
+									<li>
+										<a href>Edit</a>
+										<a href>Delete</a>
+									</li>
+								</ul>
+							</span>	
+						</td>
+					</tr>
+				</tbody>
+			</table>  
+		</div>
+	</div>
+</div>
