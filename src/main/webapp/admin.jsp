@@ -41,10 +41,12 @@
 
 
 	<!-- load controllers -->
-	<script src="app/admin/controllers/LoginController.js"></script>
+	<!-- <script src="app/admin/controllers/LoginController.js"></script>-->
 	<script src="app/admin/controllers/AdminDashboardController.js"></script>
 	<script src="app/admin/controllers/RegistrationController.js"></script>
 	<script src="app/admin/controllers/ClassDivisionController.js"></script>
+	<script src="app/admin/controllers/MainController.js"></script>
+	<script src="app/admin/controllers/StaffRegistrationController.js"></script>
 	
 	<!-- load services -->
 	<script src="app/admin/services/DivisionService.js"></script>
@@ -52,10 +54,10 @@
 	
 	
 </head>
-<body>
-	<div>
+<body ng-controller="MainController">
+	<!-- <div>
   		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
-	</div>	
+	</div>-->	
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -64,7 +66,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="../img/logo20.png" /> <span>ZealTech</span></a>
+				<a class="brand" href="index.html"> <img src="app/img/logo.png" /> <span>ZealTech</span></a>
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" dropdown is-open="status.isopen">
 					<!--<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -75,9 +77,9 @@
 						Admin <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Profile</a></li>
-						<li class="divider"></li>
 						<li><a href="#">Logout</a></li>
+						<!-- <li class="divider"></li>
+						<li><a href="#">Logout</a></li>-->
 					</ul>
 				</div>
 				<!-- user dropdown ends -->
@@ -91,11 +93,11 @@
 			<div class="span2 main-menu-span">
 				<div class="well nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Student</span></a></li>
-						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Staff</span></a></li>
-						<!-- <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Fee</span></a></li>-->
-						<li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Notification</span></a></li>
+						<li ng-click="loadSelectedPage('admin-dashboard');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+						<li ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-user"></i><span class="hidden-tablet"> Student</span></a></li>
+						<li ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon icon-black icon-users"></i><span class="hidden-tablet"> Staff</span></a></li>
+						<!-- <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Fee</span></a></li>
+						<li><a class="ajax-link" href="typography.html"><i class="icon-bell"></i><span class="hidden-tablet"> Notification</span></a></li>-->
 					</ul>
 				</div>
 			</div>

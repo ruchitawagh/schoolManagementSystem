@@ -16,7 +16,7 @@ adminUI.config(function($routeProvider) {
             controller: 'LoginController',
             templateUrl: 'app/views/login.html',
         })*/
-		.when('/registration', {
+		.when('/student-registration', {
             controller: 'RegistrationController',
             templateUrl: 'app/admin/views/registration.html',
         })
@@ -31,7 +31,11 @@ adminUI.config(function($routeProvider) {
         .when('/student-dashboard', {
             /*controller: '',*/
             templateUrl: 'app/admin/views/student-dashboard.html'
-        });
+        })
+	    .when('/staff-registration', {
+	        /*controller: '',*/
+	        templateUrl: 'app/admin/views/staff-registration.html'
+	    });
          /*.when('/dashboard', {
             //controller: 'AdminDashboardController',
             templateUrl: 'app/views/admin-dashboard.html'

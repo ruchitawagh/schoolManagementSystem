@@ -1,12 +1,17 @@
-schoolUI.controller('MainController', function($scope, $route, $rootScope, LoginService, $location, $window) {
+adminUI.controller('MainController', function($scope, $route, $rootScope, $location, $window) {
 	console.log("Main Controller Loaded");
-	$rootScope.baseUrl = '/MyLearningProjectOne/';
-	$scope.errorMsg = null;
+	//$rootScope.baseUrl = '/MyLearningProjectOne/';
+	//$scope.errorMsg = null;
+	
+	/*
+	 * function to redirect page 
+	 */
 	$rootScope.loadSelectedPage = function(menuItemUrl) {
+		console.log("####"+menuItemUrl);
 		$location.url(menuItemUrl);
 	};
 	
-	$scope.doLogin = function(login){
+	/*$scope.doLogin = function(login){
 		console.log("In login screen");
 		$scope.loginDetails = login;
 		console.log("Login details=="+JSON.stringify($scope.loginDetails));
@@ -22,6 +27,6 @@ schoolUI.controller('MainController', function($scope, $route, $rootScope, Login
 				
 		});
 		
-	};
+	};*/
 	
 });

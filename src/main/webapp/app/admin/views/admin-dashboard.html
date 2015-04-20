@@ -1,24 +1,24 @@
-<div>
+<div ng-controller="MainController">
 	<div class="sortable row-fluid">
-		<a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
-			<img src="app/img/student.png" style="height:72px;width:72px" />
+		<a data-rel="tooltip" title="Student Registration" class="well span3 top-block" ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;">
+			<img src="app/img/student.png" style="height: 72px; width: 72px;"/>
 			<div>Student Registration</div>
 		</a>
 				
-		<a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
+		<a data-rel="tooltip" title="Staff Registration" class="well span3 top-block" style="cursor: pointer;">
 			<img src="app/img/teacher.png" />
 			<div>Staff Registration</div>
 		</a>
 	
-		<a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
+		<a data-rel="tooltip" title="Logout" class="well span3 top-block" style="cursor: pointer;">
 			<img src="app/img/logout-icon.png" />
 			<div>Logout</div>
 		</a>
 					
-		<a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
+		<!-- <a data-rel="tooltip" title="12 new messages." class="well span3 top-block" ng-click="loadSelectedPage('dashboard');">
 			<img src="app/img/logout-icon.png" />
 			<div>Messages</div>
-		</a>
+		</a>-->
 	</div>
 </div>
 
