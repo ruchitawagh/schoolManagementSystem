@@ -13,7 +13,7 @@ import com.erp.school.dao.RegistrationDao;
 import com.erp.school.dao.StudentDao;
 import com.erp.school.model.Login;
 import com.erp.school.model.Student;
-import com.erp.school.model.Teacher;
+import com.erp.school.model.Staff;
 
 
 @Service
@@ -37,8 +37,8 @@ public class RegistrationService {
 		this.loginDao = loginDao;
 	}
 
-	public ModelMap registerTeacher(HttpServletRequest request,String jsonString){
-		Teacher teacherDetails=null;
+	public ModelMap registerStaff(HttpServletRequest request,String jsonString){
+		Staff teacherDetails=null;
 		ObjectMapper mapper=new ObjectMapper();
 		String UserName=null;
 		String Password=null;
@@ -47,12 +47,12 @@ public class RegistrationService {
 		ModelMap modelMap = new ModelMap();
 		try
 		{
-			teacherDetails=mapper.readValue(jsonString, Teacher.class);	
+			teacherDetails=mapper.readValue(jsonString, Staff.class);	
 			registrationDao.persist(teacherDetails);
 			UserName=teacherDetails.getFirstName()+"."+teacherDetails.getLastName()+""+teacherDetails.getId();
 			Password="123456";
 			regNo=teacherDetails.getId();
-			role=teacherDetails.getRole();
+			role=teacherDetails.getStaffRole();
 			setLoginAttribute(UserName,Password,regNo,role);
 			modelMap.addAttribute("Status", "Success");
 			modelMap.addAttribute("Message", "Data Saved sucessfully");

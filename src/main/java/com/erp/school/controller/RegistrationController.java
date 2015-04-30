@@ -37,10 +37,10 @@ public class RegistrationController {
 	 * @return
 	 */
 
-	@RequestMapping(value = "/registrationTeacher.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/registrationStaff.do", method = RequestMethod.POST)
 	public @ResponseBody Object registerTeacher(HttpServletRequest request,
 			HttpServletResponse response, @RequestBody String jsonString) {
-		return registrationService.registerTeacher(request, jsonString);
+		return registrationService.registerStaff(request, jsonString);
 
 	}
 
