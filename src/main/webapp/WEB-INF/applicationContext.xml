@@ -93,4 +93,5 @@
 	<bean id="loginDao" class="com.erp.school.dao.impl.LoginDaoImpl"></bean>
     <bean id="studentDao" class="com.erp.school.dao.impl.StudentDaoImpl"></bean>
      <bean id="sectionDao" class="com.erp.school.dao.impl.SectionDaoImpl"></bean>
+     <bean id="academicYearDao" class="com.erp.school.dao.impl.AcademicYearDaoImpl"></bean>
 </beans>

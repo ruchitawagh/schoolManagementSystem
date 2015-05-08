@@ -47,10 +47,12 @@
 	<script src="app/admin/controllers/ClassDivisionController.js"></script>
 	<script src="app/admin/controllers/MainController.js"></script>
 	<script src="app/admin/controllers/StaffRegistrationController.js"></script>
+	<script src="app/admin/controllers/SettingsController.js"></script>
 	
 	<!-- load services -->
 	<script src="app/admin/services/DivisionService.js"></script>
 	<script src="app/admin/services/studentRegistrationService.js"></script>
+	<script src="app/admin/services/SettingsService.js"></script>
 	
 	
 </head>
@@ -95,7 +97,8 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li ng-click="loadSelectedPage('admin-dashboard');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
 						<li ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-user"></i><span class="hidden-tablet"> Student</span></a></li>
-						<li ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon icon-black icon-users"></i><span class="hidden-tablet"> Staff</span></a></li>
+						<li ng-click="loadSelectedPage('staff-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon icon-black icon-users"></i><span class="hidden-tablet"> Staff</span></a></li>
+						<li ng-click="loadSelectedPage('settings');" style="cursor: pointer;"><a class="ajax-link"><i class="icon icon-black icon-gear"></i><span class="hidden-tablet"> Settings</span></a></li>
 						<!-- <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Fee</span></a></li>
 						<li><a class="ajax-link" href="typography.html"><i class="icon-bell"></i><span class="hidden-tablet"> Notification</span></a></li>-->
 					</ul>

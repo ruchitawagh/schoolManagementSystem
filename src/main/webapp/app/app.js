@@ -35,7 +35,11 @@ adminUI.config(function($routeProvider) {
 	    .when('/staff-registration', {
 	        /*controller: '',*/
 	        templateUrl: 'app/admin/views/staff-registration.html'
-	    });
+	    })
+	    .when('/settings', {
+            /*controller: '',*/
+            templateUrl: 'app/admin/views/settings.html'
+        });
          /*.when('/dashboard', {
             //controller: 'AdminDashboardController',
             templateUrl: 'app/views/admin-dashboard.html'

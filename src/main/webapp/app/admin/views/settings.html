@@ -1,0 +1,56 @@
+<style>
+.loading {
+  text-align: center;
+  font-size: 17px;
+  color: #369bd7;
+  padding: 50px 0px 50px 0px;
+}
+</style>
+<div class="row-fluid sortable" ng-controller="SettingsController" ng-init="fetchAcademicDetails();">		
+	<div class="box span12">
+		<div class="box-header well" data-original-title style="cursor:default;">
+			<h2><i class="icon-user"></i> Settings</h2>
+		</div>
+		<div class="loading" ng-show="showLoading">
+			<p>Loading, please wait...</p>
+		</div>
+		<div class="box-content" ng-show="!showLoading">
+			<table style="width:100%;">
+				<tr>
+					<td><button class="btn btn-success" style="float:right" ng-click="showAddRegpopup()"><i class="icon icon-white icon-add"></i> Add</button></td>
+				</tr>	
+			</table>
+			<hr>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Sr. No</th>
+						<th>Academic Year</th>
+						<th>Start Date</th>
+						<th>End Date</th>						
+						<!-- <th></th> -->
+					</tr>
+				</thead>   
+				<tbody>
+					<tr ng-repeat="item in academicDetails">
+						<td>{{$index}}</td>
+						<td>{{item.academicYear}}</td>
+						<td class="center">{{item.startDate | date:'mediumDate'}}</td>
+						<td class="center">{{item.endDate | date:'mediumDate'}}</td>
+						<!-- <td class="center">
+							<span class="dropdown" dropdown on-toggle="toggled(open)">
+								<a href class="dropdown-toggle" dropdown-toggle><i class="icon icon-black icon-triangle-s"></i></a> 
+								<ul class="dropdown-menu" style="margin-left:-69px;min-width: 85px;">
+									<li>
+										<a href>Edit</a>
+										<a href>Delete</a>
+									</li>
+								</ul>
+							</span>	
+						</td>-->
+ 					</tr>
+				</tbody>
+			</table>  
+		</div>
+	</div>
+</div>
