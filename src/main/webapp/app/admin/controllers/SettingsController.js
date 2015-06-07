@@ -15,7 +15,7 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 	/*
 	 * Fetch academic year details  
 	 */
-	$scope.fetchAcademicDetails = function(){
+	$rootScope.fetchAcademicDetails = function(){
 		$scope.showLoading = true;
 		$scope.Url = $rootScope.baseUrl + 'getAcademicYears.do';
 		SettingsService.fetchAcademicYearDetails($scope.Url, function(response){
@@ -36,6 +36,9 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 		$scope.Url = $rootScope.baseUrl + 'addAcademicYear.do';
 		SettingsService.addAcademicYearDetails($scope.Url, $scope.academicDetails, function(response){
 			console.log("Academic Year POST Response="+JSON.stringify(response));
+			$scope.cancel();
+			$rootScope.alerts.push({type: 'success', msg: 'Academic year data saved successfully.'});
+			//$rootScope.fetchAcademicDetails();
 		});
 	};
 	

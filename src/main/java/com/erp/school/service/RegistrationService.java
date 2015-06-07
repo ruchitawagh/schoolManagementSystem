@@ -54,14 +54,17 @@ public class RegistrationService {
 			regNo=teacherDetails.getId();
 			role=teacherDetails.getStaffRole();
 			setLoginAttribute(UserName,Password,regNo,role);
-			modelMap.addAttribute("Status", "Success");
-			modelMap.addAttribute("Message", "Data Saved sucessfully");
-			modelMap.addAttribute("UserName", UserName);
-			modelMap.addAttribute("Password", Password);
+			modelMap.addAttribute("status", "Success");
+			modelMap.addAttribute("code",200);
+			modelMap.addAttribute("message", "Staff registered successfully.");
+			modelMap.addAttribute("username", UserName);
+			modelMap.addAttribute("password", Password);
 			
 		}catch(Exception e){
 			e.printStackTrace();
-			modelMap.addAttribute("Status", "Failure");
+			modelMap.addAttribute("status", "Failure");
+			modelMap.addAttribute("code", 400);
+			modelMap.addAttribute("message", "Error in saving staff information, please try after some time.");			
 		}
 		return modelMap;
 		

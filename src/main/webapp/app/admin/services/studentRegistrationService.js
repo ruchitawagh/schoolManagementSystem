@@ -8,4 +8,13 @@ adminUI.service('studentRegistrationService', function($http) {
 			successFun(response);
 		});
 	};
+	
+	/*
+	 * GET API call to fetch sections
+	 */
+	this.fetchSectionDetails = function(url, successFun, errorFun){
+		$http.get(url).success(function(response){
+			successFun(response);
+		});
+	};
 });

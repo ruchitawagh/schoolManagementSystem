@@ -1,10 +1,8 @@
-
 package com.erp.school.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -51,9 +49,23 @@ public class RegistrationController {
 
 	}
 	
+	public DivisionService getDivisionService() {
+		return divisionService;
+	}
+
+	public void setDivisionService(DivisionService divisionService) {
+		this.divisionService = divisionService;
+	}
+
 	@RequestMapping(value="/addDivision.do" , method=RequestMethod.POST)
 	public @ResponseBody Object addDivision(HttpServletRequest request, HttpServletResponse response, @RequestBody String requestString){
+		System.out.println("JSON : \n" + requestString);
 		return divisionService.addDivision(request, response, requestString);
 	}
+	
+	@RequestMapping(value= "/getDivisions.do", method=RequestMethod.GET)
+	  public @ResponseBody Object fetchDivisions(HttpServletRequest request,HttpServletResponse response){
+		  return getDivisionService().fetchDivisions(request,response); 
+	  }
 
 }

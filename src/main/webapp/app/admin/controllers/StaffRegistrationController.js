@@ -1,4 +1,4 @@
-adminUI.controller('StaffRegistrationController', function($scope, $rootScope, $route, $modal) {
+adminUI.controller('StaffRegistrationController', function($scope, $rootScope, staffRegistrationService, $route, $modal) {
 	console.log("Staff Registration Controller Loaded");
 	$rootScope.baseUrl = '/MyLearningProjectOne/';
 	var size = 'lg';
@@ -15,13 +15,13 @@ adminUI.controller('StaffRegistrationController', function($scope, $rootScope, $
 		$modalInstance.close('cancel');
 	};
 		
-	$scope.registerstudent = function(register){
-		console.log("In Register Student");
-		$scope.studentInfo = register;
-		console.log("Info"+JSON.stringify(register));	
-		$scope.Url = $rootScope.baseUrl + 'registrationStudent.do';
+	$scope.addStaff = function(staff){
+		console.log("In Register Staff");
+		$scope.staffInfo = staff;
+		console.log("Staff Info"+JSON.stringify(staff));	
+		$scope.Url = $rootScope.baseUrl + 'registrationStaff.do';
 		console.log("URL=="+$scope.Url);
-		studentRegistrationService.submitStudentdata($scope.Url, $scope.studentInfo, function(response){
+		staffRegistrationService.submitStaffdata($scope.Url, $scope.staffInfo, function(response){
 			console.log("Response="+JSON.stringify(response));
 		});	
 	};

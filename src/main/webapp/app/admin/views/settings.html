@@ -33,7 +33,7 @@
 				</thead>   
 				<tbody>
 					<tr ng-repeat="item in academicDetails">
-						<td>{{$index}}</td>
+						<td>{{$index+1}}</td>
 						<td>{{item.academicYear}}</td>
 						<td class="center">{{item.startDate | date:'mediumDate'}}</td>
 						<td class="center">{{item.endDate | date:'mediumDate'}}</td>

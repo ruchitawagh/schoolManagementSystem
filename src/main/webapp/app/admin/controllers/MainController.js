@@ -1,7 +1,9 @@
-adminUI.controller('MainController', function($scope, $route, $rootScope, $location, $window) {
+adminUI.controller('MainController', function($scope, $route, MainService, $rootScope, $location, $window) {
 	console.log("Main Controller Loaded");
-	//$rootScope.baseUrl = '/MyLearningProjectOne/';
+	$rootScope.baseUrl = '/MyLearningProjectOne/';
 	//$scope.errorMsg = null;
+	
+	
 	
 	/*
 	 * function to redirect page 
@@ -10,6 +12,21 @@ adminUI.controller('MainController', function($scope, $route, $rootScope, $locat
 		console.log("####"+menuItemUrl);
 		$location.url(menuItemUrl);
 	};
+	
+	/*
+	 * to fetch academic year details
+	 */
+	$scope.fetchAcademicYear = function(){
+		$scope.Url = $rootScope.baseUrl + 'getAcademicYears.do';
+		console.log("URL=="+$scope.Url);
+		MainService.fetchAcademicYearDetails($scope.Url, function(response){
+			console.log("Response="+JSON.stringify(response));
+			$rootScope.academicDetails = response.academicYears;
+			//$scope.sections = response.sections;
+		});	
+	};
+	
+	$scope.fetchAcademicYear();
 	
 	/*$scope.doLogin = function(login){
 		console.log("In login screen");

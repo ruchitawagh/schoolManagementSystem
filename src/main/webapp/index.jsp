@@ -60,7 +60,7 @@
 					<div class="alert alert-info">
 						Please login with your Username and Password.
 					</div>
-					<form class="form-horizontal" name="login" ng-submit="doLogin(login)">
+					<form class="form-horizontal" name="userlogin" ng-submit="doLogin(login)">
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
 								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" ng-model="login.userName" id="userName" type="text" placeholder="Username" required/>

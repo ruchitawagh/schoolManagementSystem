@@ -1,4 +1,4 @@
-<div ng-controller="RegistrationController" ng-init="showalerts=0;register.Nationality='Indian';register.Country='India';register.State='Maharashtra';" ng-model="template">
+<div ng-controller="RegistrationController" ng-init="showalerts=0;register.Nationality='Indian';register.Country='India';register.State='Maharashtra';fetchSections();" ng-model="template">
 	<div class="modal-header" style="background-color: #43a1da;">
 		<button type="button" class="close" ng-click="cancel()">×</button>
 		<h3 style="color: #ffffff;">Add Student</h3>
@@ -50,10 +50,9 @@
 				<div class="control-group">
 					<label class="control-label" for="selectError3">Select Section</label>
 					<div class="controls">
-						<select id="selectError3" ng-model="register.Section">
-							<option>Pre Primary</option>
-							<option>Primary</option>
-							<option>Secondary</option>
+						<select id="selectError3" ng-model="register.Section" x-moz-errormessage="Select Section" required>
+						    <option value=""></option>
+							<option ng-repeat="section in sections" value="{{section.sectionId}}">{{section.sectionName}}</option>
 						</select>
 					</div>
 				</div>

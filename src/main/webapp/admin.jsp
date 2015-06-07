@@ -10,6 +10,9 @@
 	  .sidebar-nav {
 		padding: 9px 0;
 	  }
+	  .sr-only {
+	  	display:none;
+	  }
 	</style>
 	<link id="bs-css" href="app/styles/bootstrap-cerulean.css" rel="stylesheet">
 	<link href="app/styles/bootstrap-responsive.css" rel="stylesheet">
@@ -53,10 +56,11 @@
 	<script src="app/admin/services/DivisionService.js"></script>
 	<script src="app/admin/services/studentRegistrationService.js"></script>
 	<script src="app/admin/services/SettingsService.js"></script>
-	
+	<script src="app/admin/services/staffRegistrationService.js"></script>
+	<script src="app/admin/services/MainService.js"></script>
 	
 </head>
-<body ng-controller="MainController">
+<body ng-controller="AdminDashboardController">
 	<!-- <div>
   		<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
 	</div>-->	
@@ -117,6 +121,9 @@
 							<a href="#">Dashboard</a>
 						</li>
 					</ul>
+				</div>
+				<div>
+					<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
 				</div>       
 		
 			<ng-view></ng-view>

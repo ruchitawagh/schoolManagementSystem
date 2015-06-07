@@ -13,9 +13,9 @@ public class Division {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false)
+	@Column(name = "division_id", nullable = false)
 	private Integer id;
-
+	
 	@Column(name = "division_name", nullable = false)
 	private String divisionName;
 
@@ -34,5 +34,4 @@ public class Division {
 	public void setDivisionName(String divisionName) {
 		this.divisionName = divisionName;
 	}
-
 }
