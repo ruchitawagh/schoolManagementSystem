@@ -32,6 +32,17 @@ public class AcademicYear {
 
     @Column(name="is_current_year", nullable=true)
     private Integer iscurrentYear;
+    
+    @Column(name="status", nullable=false)
+    private String status;
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public Integer getAcademicyearId() {
 		return academicyearId;

@@ -36,4 +36,14 @@ public class SettingsController {
 		  return getAcademicYearService().fetchAcademicYear(request,response); 
 	  }
 
+	@RequestMapping(value= "/updateAcademicYears.do", method=RequestMethod.POST)
+	  public @ResponseBody Object updateAcademicYear(HttpServletRequest request,HttpServletResponse response, @RequestBody String requestString){
+		  return getAcademicYearService().updateAcademicYear(request,response,requestString); 
+	  }
+
+	@RequestMapping(value= "/deleteAcademicYears.do", method=RequestMethod.POST)
+	  public @ResponseBody Object deleteAcademicYear(HttpServletRequest request,HttpServletResponse response){
+		  return getAcademicYearService().deleteAcademicYear(request,response); 
+	  }
+
 }

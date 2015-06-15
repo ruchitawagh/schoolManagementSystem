@@ -56,6 +56,38 @@ public class AcademicYearService {
 		}
 		return modelMap;
 	}
+	
+	public ModelMap updateAcademicYear(HttpServletRequest request,HttpServletResponse response,String requestString){
+		ModelMap modelMap = new ModelMap();
+		AcademicYear academicyear = new AcademicYear();
+		ObjectMapper objMapper = new ObjectMapper();
+		try{
+			academicyear = objMapper.readValue(requestString, AcademicYear.class);
+			getAcademicyearDao().merge(academicyear);
+			modelMap.addAttribute("status", "Success");
+		}catch(Exception e){
+			e.printStackTrace();
+			modelMap.addAttribute("status", "failure");
+		}
+		return modelMap;
+	}
+	
+	public ModelMap deleteAcademicYear(HttpServletRequest request,HttpServletResponse response){
+		ModelMap modelMap = new ModelMap();
+		AcademicYear academicYear =new AcademicYear();
+		int academicYearId;
+		try{
+			academicYearId = Integer.parseInt(request.getParameter("academicYearId"));
+			academicYear = getAcademicyearDao().find(academicYear, academicYearId);
+			academicYear.setStatus("deleted");
+			getAcademicyearDao().merge(academicYear);
+			modelMap.addAttribute("status", "Success");
+		}catch(Exception e){
+			e.printStackTrace();
+			modelMap.addAttribute("status", "failure");
+		}
+		return modelMap;
+	}
 
 	public AcademicYearDao getAcademicyearDao() {
 		return academicyearDao;
