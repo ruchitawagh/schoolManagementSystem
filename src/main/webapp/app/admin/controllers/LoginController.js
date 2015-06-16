@@ -17,12 +17,14 @@ schoolUI.controller('LoginController', function($scope, $route, $rootScope, Logi
 		console.log("URL=="+$scope.Url);
 		LoginService.doLogin($scope.Url, $scope.loginDetails, function(response){
 			console.log("Rasponse==" +JSON.stringify(response));
-			/*if(response.payLoad.status.code == 200){
+			if(response.status == "Success"){
 				window.location = "admin.jsp"; //redirect page to admin dashboard
 			} else {
-				$scope.errorMsg = " The username or password you entered is incorrect.";
-			}*/
-				
+				$scope.login = '';
+				$scope.errorMsg = response.msg;
+			}	
+		}, function(response){
+			
 		});
 		
 	};

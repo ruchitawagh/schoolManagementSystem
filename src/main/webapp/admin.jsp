@@ -100,7 +100,7 @@
 				<div class="well nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li ng-click="loadSelectedPage('admin-dashboard');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-						<li ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-user"></i><span class="hidden-tablet"> Student</span></a></li>
+						<!--<li ng-click="loadSelectedPage('student-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon-user"></i><span class="hidden-tablet"> Student</span></a></li>-->
 						<li ng-click="loadSelectedPage('staff-registration');" style="cursor: pointer;"><a class="ajax-link"><i class="icon icon-black icon-users"></i><span class="hidden-tablet"> Staff</span></a></li>
 						<li ng-click="loadSelectedPage('settings');" style="cursor: pointer;"><a class="ajax-link"><i class="icon icon-black icon-gear"></i><span class="hidden-tablet"> Settings</span></a></li>
 						<!-- <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Fee</span></a></li>

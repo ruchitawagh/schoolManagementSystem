@@ -43,6 +43,7 @@ public class RegistrationService {
 		String UserName=null;
 		String Password=null;
 		String role=null;
+		String isTeacher=null;
 		Integer regNo;
 		ModelMap modelMap = new ModelMap();
 		try
@@ -53,7 +54,10 @@ public class RegistrationService {
 			Password="123456";
 			regNo=teacherDetails.getId();
 			role=teacherDetails.getStaffRole();
-			setLoginAttribute(UserName,Password,regNo,role);
+			isTeacher=teacherDetails.getIsTeacher();
+			if(isTeacher.equals("Yes")){
+				setLoginAttribute(UserName,Password,regNo,role);
+			}
 			modelMap.addAttribute("status", "Success");
 			modelMap.addAttribute("code",200);
 			modelMap.addAttribute("message", "Staff registered successfully.");

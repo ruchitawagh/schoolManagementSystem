@@ -2,6 +2,7 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 	console.log("Settings Controller Loaded");
 	$rootScope.baseUrl = '/MyLearningProjectOne/';
 	$scope.showLoading = true;
+	$rootScope.emptyData = '';
 	var size = 'lg';
 	$scope.showAddRegpopup = function(){
 		console.log("Inside pop up screen"+size);
@@ -22,7 +23,12 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 			console.log("Academic Year Response="+JSON.stringify(response));
 			if(null != response && response != ""){
 				$scope.showLoading = false;
-				$scope.academicDetails = response.academicYears;
+				if(response.academicYears != '' && null != response.academicYears){
+					$rootScope.emptyData = '';
+					$rootScope.academicDetails = response.academicYears;
+				} else {
+					$rootScope.emptyData = "No records found";
+				}	
 			}
 		});	
 	};
@@ -38,7 +44,7 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 			console.log("Academic Year POST Response="+JSON.stringify(response));
 			$scope.cancel();
 			$rootScope.alerts.push({type: 'success', msg: 'Academic year data saved successfully.'});
-			//$rootScope.fetchAcademicDetails();
+			$rootScope.fetchAcademicDetails();
 		});
 	};
 	

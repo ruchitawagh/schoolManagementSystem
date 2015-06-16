@@ -66,31 +66,38 @@ public class SessionController {
 		ResponsePayLoadStatus responsePayLoadStatus = new ResponsePayLoadStatus();
 		responsePayLoad.setStatus(responsePayLoadStatus);
 		returnObject.setPayLoad(responsePayLoad);
-		
+		ModelMap modelMap = new ModelMap();
 		try {
 			user = objectMapper.readValue(jsonString, Login.class);
 			isValidUser = sessionService.validateUser(user);
 			if(isValidUser){
-				returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
+				/*returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
 				returnObject.getHead().setSessionId("Session management is yet pending having low priority as per discussion");
 				returnObject.getPayLoad().getStatus().setCode(200);
-				returnObject.getPayLoad().getStatus().setMsg("Valid user");
+				returnObject.getPayLoad().getStatus().setMsg("Valid user")*/;
+				modelMap.addAttribute("status", "Success");
+				modelMap.addAttribute("code", "200");
+				modelMap.addAttribute("msg", "User logged in successfully.");
+				
 			}else{
-				returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
+				/*returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
 				returnObject.getHead().setSessionId("Session management is yet pending having low priority as per discussion");
 				returnObject.getPayLoad().getStatus().setCode(400);
-				returnObject.getPayLoad().getStatus().setMsg("Invalid User");
+				returnObject.getPayLoad().getStatus().setMsg("Invalid User");*/
+				modelMap.addAttribute("status", "Failed");
+				modelMap.addAttribute("code", "400");
+				modelMap.addAttribute("msg", "Incorrect username/password please try again.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
+			/*returnObject.getHead().setId("Yet to be decided, what is to be kept in this field");
 			returnObject.getHead().setSessionId("Session management is yet pending having low priority as per discussion");
 			returnObject.getPayLoad().getStatus().setCode(400);
-			returnObject.getPayLoad().getStatus().setMsg("Oops Something went wrong : Filed in validationg user credentials");
+			returnObject.getPayLoad().getStatus().setMsg("Oops Something went wrong : Filed in validationg user credentials");*/
+			modelMap.addAttribute("status", "Failed");
+			modelMap.addAttribute("code", "400");
+			modelMap.addAttribute("msg", "Oops something went worng please try after some time.");
 		}
-		
-		ModelMap modelMap = new ModelMap();
-		modelMap.addAttribute("response", returnObject);
 		return modelMap;
 	}
 }

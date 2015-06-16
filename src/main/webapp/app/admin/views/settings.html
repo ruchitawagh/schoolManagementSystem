@@ -14,21 +14,25 @@
 		<div class="loading" ng-show="showLoading">
 			<p>Loading, please wait...</p>
 		</div>
+		
 		<div class="box-content" ng-show="!showLoading">
 			<table style="width:100%;">
 				<tr>
-					<td><button class="btn btn-success" style="float:right" ng-click="showAddRegpopup()"><i class="icon icon-white icon-add"></i> Add</button></td>
+					<td><button class="btn btn-success" style="float:right" ng-click="showAddRegpopup();"><i class="icon icon-white icon-add"></i> Add</button></td>
 				</tr>	
 			</table>
 			<hr>
-			<table class="table table-striped">
+			<div class="loading" ng-show="emptyData!=''">{{emptyData}}
+				<p>{{emptyData}}</p>
+			</div>
+			<table class="table table-striped" ng-hide="emptyData!=''">
 				<thead>
 					<tr>
 						<th>Sr. No</th>
 						<th>Academic Year</th>
 						<th>Start Date</th>
 						<th>End Date</th>						
-						<!-- <th></th> -->
+						<th>Actions</th>
 					</tr>
 				</thead>   
 				<tbody>
@@ -37,17 +41,11 @@
 						<td>{{item.academicYear}}</td>
 						<td class="center">{{item.startDate | date:'mediumDate'}}</td>
 						<td class="center">{{item.endDate | date:'mediumDate'}}</td>
-						<!-- <td class="center">
-							<span class="dropdown" dropdown on-toggle="toggled(open)">
-								<a href class="dropdown-toggle" dropdown-toggle><i class="icon icon-black icon-triangle-s"></i></a> 
-								<ul class="dropdown-menu" style="margin-left:-69px;min-width: 85px;">
-									<li>
-										<a href>Edit</a>
-										<a href>Delete</a>
-									</li>
-								</ul>
-							</span>	
-						</td>-->
+						<td class="center">
+							<a class="btn btn-info" href="#">
+								<i class="icon-edit icon-white"></i>                                              
+							</a>
+						</td>
  					</tr>
 				</tbody>
 			</table>  
