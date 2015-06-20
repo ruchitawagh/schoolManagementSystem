@@ -1,6 +1,10 @@
 package com.erp.school.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +15,11 @@ import org.springframework.ui.ModelMap;
 import com.erp.school.dao.LoginDao;
 import com.erp.school.dao.RegistrationDao;
 import com.erp.school.dao.StudentDao;
+import com.erp.school.model.AcademicYear;
 import com.erp.school.model.Login;
 import com.erp.school.model.Student;
 import com.erp.school.model.Staff;
+import com.sun.org.apache.bcel.internal.generic.GETSTATIC;
 
 
 @Service
@@ -102,6 +108,34 @@ public class RegistrationService {
 		return modelMap;
 		
 	}
+
+	public Object fetchSatffList(HttpServletRequest request,HttpServletResponse response){
+		/*ModelMap modelMap = new ModelMap();
+		List<AcademicYear> AcademicYears =new ArrayList<AcademicYear>();
+		try{
+			AcademicYears = getAcademicyearDao().fetchAcademicYear();
+			modelMap.addAttribute("status", "Success");
+			modelMap.addAttribute("academicYears", AcademicYears);
+		}catch(Exception e){
+			e.printStackTrace();
+			modelMap.addAttribute("status", "failure");
+		}
+		return modelMap;
+		 * 
+		 * 
+		 */
+		ModelMap modelMap = new ModelMap();
+		List<Staff> StaffLists = new ArrayList<Staff>();
+		try{
+			StaffLists = getRegistrationDao().fetchStaffDetails();
+			modelMap.addAttribute("status", "Success");
+			modelMap.addAttribute("staffList", StaffLists);
+		}catch(Exception e){
+			e.printStackTrace();
+			modelMap.addAttribute("status", "failure");
+		}
+		return StaffLists;
+	}
 	
 	public void setLoginAttribute(String userName,String PassWord,Integer RegNo,String role){
 			Login login=new Login();
@@ -119,4 +153,6 @@ public class RegistrationService {
 	public void setRegistrationDao(RegistrationDao registrationDao) {
 		this.registrationDao = registrationDao;
 	}
+	
+	
 }

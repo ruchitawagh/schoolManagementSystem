@@ -18,7 +18,7 @@
 		<div class="box-content" ng-show="!showLoading">
 			<table style="width:100%;">
 				<tr>
-					<td><button class="btn btn-success" style="float:right" ng-click="showAddRegpopup();"><i class="icon icon-white icon-add"></i> Add</button></td>
+					<td><button class="btn btn-success" style="float:right" ng-click="showAddAcademicYearpopup();"><i class="icon icon-white icon-add"></i> Add</button></td>
 				</tr>	
 			</table>
 			<hr>
@@ -42,7 +42,7 @@
 						<td class="center">{{item.startDate | date:'mediumDate'}}</td>
 						<td class="center">{{item.endDate | date:'mediumDate'}}</td>
 						<td class="center">
-							<a class="btn btn-info" href="#">
+							<a class="btn btn-info" ng-click="edit($index)">
 								<i class="icon-edit icon-white"></i>                                              
 							</a>
 						</td>

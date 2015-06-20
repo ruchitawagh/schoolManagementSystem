@@ -51,6 +51,8 @@
 	<script src="app/admin/controllers/MainController.js"></script>
 	<script src="app/admin/controllers/StaffRegistrationController.js"></script>
 	<script src="app/admin/controllers/SettingsController.js"></script>
+	<script src="app/admin/controllers/AddAcademicYearController.js"></script>
+	
 	
 	<!-- load services -->
 	<script src="app/admin/services/DivisionService.js"></script>

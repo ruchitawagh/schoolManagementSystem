@@ -41,6 +41,14 @@ public class RegistrationController {
 		return registrationService.registerStaff(request, jsonString);
 
 	}
+	
+	@RequestMapping(value = "/getStaffDetails.do", method = RequestMethod.GET)
+	public @ResponseBody Object getStaffList(HttpServletRequest request, HttpServletResponse response) {
+		//return getDivisionService().fetchDivisions(request,response);
+		return getRegistrationService().fetchSatffList(request, response);
+	}
+	
+	
 
 	@RequestMapping(value = "/registrationStudent.do", method = RequestMethod.POST)
 	public @ResponseBody Object registerStudent(HttpServletRequest request,
