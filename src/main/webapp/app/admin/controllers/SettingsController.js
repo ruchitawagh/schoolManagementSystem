@@ -4,7 +4,15 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 	$scope.showLoading = true;
 	$rootScope.emptyData = '';
 	var size = 'lg';
+	$rootScope.AcademicYear = {};
+	$rootScope.modeSelected = '';
+
+	$scope.setMode = function(mode) {
+		$rootScope.modeSelected=mode;
+	};
+
 	$scope.showAddAcademicYearpopup = function(){
+		$rootScope.AcademicYear = {};
 		console.log("Inside pop up screen"+size);
 		$modalInstance = $modal.open({
 			templateUrl: 'app/admin/views/add-academicyear.html',
@@ -31,6 +39,22 @@ adminUI.controller('SettingsController', function($scope, $rootScope, SettingsSe
 				}	
 			}
 		});	
+	};
+	
+	/*
+	 * 
+	 */
+	$rootScope.editAcademicYear = function(object){
+		console.log("####"+JSON.stringify(object));
+		/*angular.forEach($rootScope.academicDetails, function(value, position){
+			if(position == index){*/
+				$rootScope.modeSelected = 'edit';
+				$scope.showAddAcademicYearpopup();
+				$rootScope.AcademicYear['academicYear'] = object.academicYear;
+				$rootScope.AcademicYear['startDate'] = object.startDate;
+				$rootScope.AcademicYear['endDate'] = object.endDate;
+			//}
+		//});
 	};
 	
 	$scope.edit = function(index){

@@ -1,7 +1,8 @@
 <div ng-controller="AddAcademicYearController" ng-model="template">
 	<div class="modal-header" style="background-color: #43a1da;">
 		<button type="button" class="close" ng-click="cancel()">×</button>
-		<h3 style="color: #ffffff;">Create Academic Year</h3>
+		<h3 style="color: #ffffff;" ng-show="modeSelected=='add'">Create Academic Year</h3>
+		<h3 style="color: #ffffff;" ng-show="modeSelected=='edit'">Edit Academic Year</h3>
 	</div>
 	<form class="form-horizontal" name="Academic" ng-submit="test(AcademicYear)">
 		<div class="modal-body">
@@ -35,7 +36,8 @@
 		</div>
 		<div class="modal-footer" style="background-color: #ffffff;">
 			<!--<button class="btn" ng-click="cancel()">Close</button>-->
-			<button type="submit" class="btn btn-primary">Save</button>
+			<button type="submit" class="btn btn-primary" ng-show="modeSelected=='add'">Save</button>
+			<button type="submit" class="btn btn-primary" ng-show="modeSelected=='edit'">Update</button>
 		</div>
 	</form>
 </div>
