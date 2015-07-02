@@ -5,12 +5,17 @@
 			<div>Student Registration</div>
 		</a> -->
 				
-		<a data-rel="tooltip" title="Staff Registration" class="well span3 top-block" style="cursor: pointer;">
+		<a data-rel="tooltip" title="Staff Registration" class="well span3 top-block" style="cursor: pointer;" ng-click="loadSelectedPage('staff-registration');">
 			<img src="app/img/teacher.png" />
 			<div>Staff Registration</div>
 		</a>
+		
+		<a data-rel="tooltip" title="Staff Registration" class="well span3 top-block" style="cursor: pointer;" ng-click="loadSelectedPage('settings');">
+			<img src="app/img/settings.png" style="height:72px;width:72px"/>
+			<div>Settings</div>
+		</a>
 	
-		<a data-rel="tooltip" title="Logout" class="well span3 top-block" style="cursor: pointer;">
+		<a data-rel="tooltip" title="Logout" class="well span3 top-block" style="cursor: pointer;" ng-click="logout();">
 			<img src="app/img/logout-icon.png" />
 			<div>Logout</div>
 		</a>

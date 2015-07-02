@@ -25,4 +25,20 @@ adminUI.controller('StaffRegistrationController', function($scope, $rootScope, s
 			console.log("Response="+JSON.stringify(response));
 		});	
 	};
+	
+	/*
+	 * to fetch the registered staff list
+	 */
+	$rootScope.fetchStaffDetails = function(){
+		console.log("Fetching staff details");
+		$scope.Url = $rootScope.baseUrl + 'getStaffDetails.do';
+		staffRegistrationService.fetchStaffLists($scope.Url, function(response){
+			console.log("Response="+JSON.stringify(response));
+			if(null != response && response != ""){
+				$rootScope.staffDetails = response;
+			}
+		});
+	};
+	
+	$scope.fetchStaffDetails();
 });

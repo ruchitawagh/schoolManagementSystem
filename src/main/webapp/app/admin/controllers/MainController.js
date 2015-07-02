@@ -28,6 +28,11 @@ adminUI.controller('MainController', function($scope, $route, MainService, $root
 	
 	$scope.fetchAcademicYear();
 	
+	$rootScope.logout = function(){
+		console.log("In logout");
+		$window.location.href = 'http://localhost:8080/MyLearningProjectOne/index.jsp';
+	};
+	
 	/*$scope.doLogin = function(login){
 		console.log("In login screen");
 		$scope.loginDetails = login;

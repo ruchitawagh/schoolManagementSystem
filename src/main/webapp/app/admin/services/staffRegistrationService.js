@@ -9,4 +9,13 @@ console.log("Staff Registration Service loaded");
 			successFun(response);
 		});
 	};
+	
+	/*
+	 * GET API call to fetch staff list
+	 */
+	this.fetchStaffLists = function(url, successFun, errorFun){
+		$http.get(url).success(function(response){
+			successFun(response);
+		});
+	};
 });

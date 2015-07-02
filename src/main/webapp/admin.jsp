@@ -85,7 +85,7 @@
 						Admin <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Logout</a></li>
+						<li ng-click="logout()"><a>Logout</a></li>
 						<!-- <li class="divider"></li>
 						<li><a href="#">Logout</a></li>-->
 					</ul>

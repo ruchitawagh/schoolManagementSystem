@@ -1,8 +1,6 @@
 schoolUI.controller('LoginController', function($scope, $route, $rootScope, LoginService, $location, $window) {
 	console.log("Login Controller Loaded");
-	/*$rootScope.SEND_REQUEST = {
-								"request":{}
-				 			  }*/
+	
 	$rootScope.baseUrl = '/MyLearningProjectOne/';
 	$scope.errorMsg = null;
 	$rootScope.loadSelectedPage = function(menuItemUrl) {
